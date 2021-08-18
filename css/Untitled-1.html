@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cupcake" class="box">
+        <span class="letter">L</span>
+
+        <div class="cupcakeCircle box">
+            <div class="cupcakeInner box">
+                <div class="cupcakeCore box"></div>
+
+            </div>
+        </div>
+
+        <span class="letter box">A</span>
+        <span class="letter box">D</span>
+        <span class="letter box">I</span>
+        <span class="letter box">N</span>
+        <span class="letter box">G</span>
+    </div>
+    <script>
+        const preloader = document.querySelector('.box');
+
+        const fadeEffect = setInterval(() => {
+            // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
+            if (!preloader.style.opacity) {
+                preloader.style.opacity = 1;
+            }
+            if (preloader.style.opacity > 0) {
+                preloader.style.opacity -= 0.1;
+            } else {
+                clearInterval(fadeEffect);
+            }
+        }, 200);
+
+        window.addEventListener('load', fadeEffect);
+    </script>
+
+</body>
+
+</html>
